@@ -1,5 +1,4 @@
 # Linux command line cheat sheet
-&nbsp;
 
 ## Basic
 | Command | Description |
@@ -24,9 +23,30 @@
 ||`ls -s` sort|
 ||`ls ~/Documents -r -d` |
 ||`ls --help` List information |
-&nbsp;&nbsp;
+&nbsp;
 
 ## Administrative privileges
-| Command | Description |
-| ----------- | ----------- |
-|||
+
+
+| Permissions | Commands example
+|---------|-----------|
+| U   G   W | | 
+|rwx rwx rwx |    chmod 777 file.txt |
+|rwx rwx r-x |    chmod 775 file.txt |
+|rwx r-x r-x |    chmod 755 file.txt |
+|rw- rw- r-- |    chmod 664 file.txt |
+|rw- r-- r-- |   chmod 644 file.txt |
+
+    U = User
+    G = Group
+    W = World
+
+    r = Read
+    w = write
+    x = execute
+    - = no access
+
+![linux permissions chart](images/linux-permissions-chart.png)
+
+
+## Package manager (apt-get) to install new applications
