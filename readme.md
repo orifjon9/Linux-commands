@@ -50,3 +50,28 @@
 
 
 ## Package manager (apt-get) to install new applications
+
+| Command | Description |
+| ----------- | ----------- |
+| **apt-get upgrade** | updates all installed app to latest  |
+| **apt-get install** | install an application  |
+||`apt-get install gimp` installs gimp |
+| **apt-get remove** | uninstall an application  |
+||`apt-get removes bluefish` removes bluefish |
+| **apt-cache search** | searches installed an application  |
+||`apt-cache search bluefish` searches installed bluefish application |
+| **apt-cache policy search** | provides info for an application and build version  |
+||`apt-cache policy bluefish` policy for bluefish app |
+|**dpkg**| install an app if you have a source .deb|
+||`dpkg -i /home/downloads/chrome-browser.deb` installs chrome-browser.deb source in local machine|
+
+## File permissions and ownership 
+
+| Permissions | Commands example
+|---------|-----------|
+| **chown**| Update a file ownership | 
+| | `chown user:group file` | 
+| | `chown root:orifjon9 admin.txt` orifjon9 will get an access as a group bot not own it | 
+| | `chown orifjon9:orifjon9 admin.txt` orifjon9 is owns and access as group| 
+| **chmod**| Updates a file permission | 
+| | `chmod 664 admin.txt` set a new permission | 
