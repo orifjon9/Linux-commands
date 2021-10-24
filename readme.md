@@ -31,7 +31,7 @@
 
 | Permissions | Commands example   |
 | ----------- | ------------------ |
-| U G W       |                    |
+| U -- G -- W |                    |
 | rwx rwx rwx | chmod 777 file.txt |
 | rwx rwx r-x | chmod 775 file.txt |
 | rwx r-x r-x | chmod 755 file.txt |
@@ -84,6 +84,7 @@
 | **ls**      | `ls -al` List all files in a long listing (detailed) format       |
 | **touch**   | Create file(s)                                                    |
 |             | `touch test.txt test.txt` create files                            |
+|             | `echo "test test" > test2.txt` create files                       |
 | **rm**      | removes file(s)                                                   |
 |             | `rm test.txt` create                                              |
 |             | `rm ./mydir/test.txt` or `rm ./mydir/*.txt` or `rm ./mydir/*`     |
@@ -100,3 +101,20 @@
 | **less**    | `less test.txt` Browse through a text file                        |
 | **head**    | `head test.txt` Display the first 10 lines of file                |
 | **tail**    | `tail test.txt` Display the last 10 lines of file                 |
+
+## Search
+
+| Permissions | Commands example                                                                |
+| ----------- | ------------------------------------------------------------------------------- |
+| **find**    | `find directory -type {f file d directory} -name name`                          |
+|             | `find . -type f -name "admin.txt"`                                              |
+|             | `find . -type f -not -name "*.txt"` not txt files                               |
+|             | `find . -type f -name "*.txt"`                                                  |
+|             | `find . -type d -name "admin*"` searches directories starts with admin          |
+|             | `find /etc -type f -iname "*.txt"` ignores case intensive                       |
+|             | `find /etc -maxdepth 1 -type f -iname "*.conf"` control recursive               |
+|             | `find /etc -type f -perm 0664` search files with asked permission               |
+|             | `find . -size +1M` or `find . -size -1M` search files with over or less 1mb     |
+| **grep**    | `grep -i -n "function" test.txt test.txt` search files contains asked text      |
+|             | `find . -type f -iname "*.txt" -exec grep -i -n "function" {} +`                |
+|             | `find . -type f -iname "*.txt" -exec grep -i -n "function" {} + | tee result.txt` |
